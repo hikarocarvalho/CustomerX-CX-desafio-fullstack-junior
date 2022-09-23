@@ -1,0 +1,30 @@
+.tbody {
+  height: 50%;
+  max-height: 50%;
+  overflow: scroll;
+}
+
+.tbody tr:hover{
+    background-color: #1e2124;
+}
+
+td:last-child{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+td{
+    border-left:1px solid #7289da;
+    font-size: 1em;
+    font-weight: bold;
+    color:#7289da;
+    height: 2em;
+    padding-left: 0.5em;
+    background-color: 	#36393e;
+}
+
+td:first-child{
+    border: none;
+}

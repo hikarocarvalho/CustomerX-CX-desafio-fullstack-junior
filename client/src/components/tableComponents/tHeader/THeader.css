@@ -1,0 +1,28 @@
+.thead{
+    position:sticky;
+    top: 0;
+}
+
+tr,th{
+    
+    border-collapse: collapse;
+}
+
+th{
+    border-left:1px solid #7289da;
+    font-size: 1em;
+    font-weight: bold;
+    color:#7289da;
+    font-size: 1.2em;
+    background-color: #282b30;
+}
+
+th:first-child{
+    border: none;
+}
+
+.table-title{
+    background-color: #7289da;
+    color:#1e2124;
+    border-radius: 10px 10px 0px 0px;
+}

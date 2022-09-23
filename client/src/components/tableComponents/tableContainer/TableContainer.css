@@ -1,0 +1,7 @@
+.table-container {
+  height: auto;
+  max-height: 100%;
+  width: 90%;
+  border: none;
+  overflow-y: scroll;
+}
