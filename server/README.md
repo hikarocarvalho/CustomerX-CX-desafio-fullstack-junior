@@ -1,4 +1,5 @@
-# My List - Server
+# CustomerX-CX-desafio-fullstack-junior
+
 ## This project use like dependence:
 
 ````

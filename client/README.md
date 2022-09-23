@@ -1,4 +1,5 @@
-# My List - Client
+# CustomerX-CX-desafio-fullstack-junior
+
 ## This project use like dependence:
 
 ````
