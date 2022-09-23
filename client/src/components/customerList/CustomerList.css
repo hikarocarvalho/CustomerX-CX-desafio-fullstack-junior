@@ -19,6 +19,7 @@
 .customer-list .button{
     height: 2em;
     width: 2em;
+    margin-left: 1em;
     align-self: center;
 }
 
