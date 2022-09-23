@@ -1,17 +1,11 @@
-# My List - Server
+# My List - Client
 ## This project use like dependence:
 
 ````
 node : 16.14.2
-@nestjs/swagger : 5.2.1
-@prisma/client : 3.15.2
-bcrypt : 5.0.1
-class-transformer : 0.5.1
-class-validator : 0.13.2
-passport : 0.6.0
-passport-jwt : 4.0.0
-passport-local : 1.0.0
-swagger-ui-express : 4.4.0
+react : 18.2.0
+react-router-dom : 6.3.0
+react-toastify : 9.0.5
 ````
 
 ## To use this project, you need:
@@ -26,7 +20,7 @@ swagger-ui-express : 4.4.0
 ### Clone this repository:
 
 ```
-    git clone https://github.com/hikarocarvalho/MinhaLista_Server.git
+    git clone https://github.com/hikarocarvalho/MinhaLista_Client.git
 ```
 
 ### Open the terminal inside this cloned folder and run:
@@ -38,5 +32,5 @@ swagger-ui-express : 4.4.0
 ### To run this project, you can use:
 
 ```
-    npm run start:dev
+    npm run start
 ```
