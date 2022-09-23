@@ -1,0 +1,81 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model DbUsers {
+  id         Int       @id @default(autoincrement())
+  userName   String
+  email      String    @unique()
+  password   String
+  customers  DbCustomers[]
+  created_at DateTime  @default(now())
+  updated_at DateTime?
+  deleted_at DateTime?
+
+  @@map("users")
+}
+
+model DbCustomers {
+  id         Int       @id @default(autoincrement())
+  complete_name   String
+  mails      DbMails[]
+  phones     DbPhones[]
+  contacts   DbContacts[]
+  user       DbUsers @relation(fields: [userId], references: [id])
+  userId     Int
+  created_at DateTime  @default(now())
+  updated_at DateTime?
+  deleted_at DateTime?
+
+  @@map("customers")
+}
+
+model DbContacts{
+  id         Int       @id @default(autoincrement())
+  complete_name      String
+  customer   DbCustomers @relation(fields: [customerId], references: [id])
+  customerId Int
+  mails      DbMails[]
+  phones     DbPhones[]
+  created_at DateTime  @default(now())
+  updated_at DateTime?
+  deleted_at DateTime?
+
+  @@map("contacts")
+}
+
+model DbMails {
+  id         Int       @id @default(autoincrement())
+  email      String
+  customer   DbCustomers? @relation(fields: [customerId], references: [id])
+  customerId Int?
+  contact    DbContacts? @relation(fields: [contactId], references: [id])
+  contactId  Int?
+  created_at DateTime  @default(now())
+  updated_at DateTime?
+  deleted_at DateTime?
+
+  @@map("cusotmerMails")
+}
+
+model DbPhones {
+  id         Int       @id @default(autoincrement())
+  phone      String
+  customer   DbCustomers? @relation(fields: [customerId], references: [id])
+  customerId Int?
+  contact    DbContacts? @relation(fields: [contactId], references: [id])
+  contactId  Int?
+  created_at DateTime  @default(now())
+  updated_at DateTime?
+  deleted_at DateTime?
+
+  @@map("cusotmerPhones")
+}
