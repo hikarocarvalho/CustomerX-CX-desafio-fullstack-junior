@@ -4,9 +4,7 @@ import { CreateContactDto } from './dto/create-contact.dto';
 import { UpdateContactDto } from './dto/update-contact.dto';
 import { Contact } from './entities/contact.entity';
 import { handleError } from 'src/utils/handle-error.util';
-import { UserService } from 'src/user/user.service';
 import { JwtService } from '@nestjs/jwt';
-import { User } from 'src/user/entities/user.entity';
 
 @Injectable()
 export class ContactService {
@@ -25,12 +23,31 @@ export class ContactService {
   };
 
   async create(createContactDto: CreateContactDto): Promise<Contact> {
-    const data: Contact = { 
+    const dataContact: Contact = { 
       ...createContactDto,
     }
+
+    delete dataContact["mails"];
+    delete dataContact["phones"];
+
+    const dataMails = createContactDto["mails"];
+    const dataPhones = createContactDto["phones"];
+    
     return this.prisma.dbContacts
       .create({
-        data
+        data:{
+          ...dataContact,
+          mails:{
+            createMany:{
+              data: dataMails
+            }
+          },
+          phones:{
+            createMany:{
+              data: dataPhones
+            }
+          }
+        }
       })
       .catch(handleError);
   }
@@ -39,6 +56,7 @@ export class ContactService {
     const contacts = await this.prisma.dbContacts.findMany({
       select: this.contactResultData,
       where: {
+        customerId: id,
         deleted_at: null,
       },
     });

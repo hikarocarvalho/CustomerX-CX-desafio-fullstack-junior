@@ -25,13 +25,32 @@ export class CustomerService {
   };
 
   async create(createCustomerDto: CreateCustomerDto, user: User): Promise<Customer> {
-    const data: Customer = { 
+    const dataCustomer: Customer = { 
       ...createCustomerDto,
       userId: user.id,
     }
+
+    delete dataCustomer["mails"];
+    delete dataCustomer["phones"];
+
+    const dataMails = createCustomerDto["mails"];
+    const dataPhones = createCustomerDto["phones"];
+  
     return this.prisma.dbCustomers
       .create({
-        data
+        data:{
+          ...dataCustomer,
+          mails:{
+            createMany:{
+              data: dataMails
+            }
+          },
+          phones:{
+            createMany:{
+              data: dataPhones
+            }
+          }
+        }
       })
       .catch(handleError);
   }
