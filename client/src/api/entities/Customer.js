@@ -2,7 +2,7 @@ import ApiCrud from "../ApiCrud";
 
 const Customer = {
   endPoint: "customer",
-  createCustomer: (data) => ApiCrud(Customer.endPoint).create(Customer.endPoint, data),
+  createCustomer: (data) => ApiCrud(Customer.endPoint).createAuthenticated(Customer.endPoint, data),
   getCustomers: () => ApiCrud(Customer.endPoint).getAll(Customer.endPoint),
   getCustomer: (id) => ApiCrud(Customer.endPoint).getById(Customer.endPoint, id),
   updateCustomer: (id, data) =>

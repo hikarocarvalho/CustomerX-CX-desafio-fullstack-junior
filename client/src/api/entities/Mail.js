@@ -2,7 +2,7 @@ import ApiCrud from "../ApiCrud";
 
 const Mail = {
   endPoint: "mail",
-  createMail: (data) => ApiCrud(Mail.endPoint).create(Mail.endPoint, data),
+  createMail: (data) => ApiCrud(Mail.endPoint).createAuthenticated(Mail.endPoint, data),
   getMails: () => ApiCrud(Mail.endPoint).getAll(Mail.endPoint),
   getMail: (id) => ApiCrud(Mail.endPoint).getById(Mail.endPoint, id),
   updateMail: (id, data) =>

@@ -2,7 +2,7 @@ import ApiCrud from "../ApiCrud";
 
 const Phone = {
   endPoint: "phone",
-  createPhone: (data) => ApiCrud(Phone.endPoint).create(Phone.endPoint, data),
+  createPhone: (data) => ApiCrud(Phone.endPoint).createAuthenticated(Phone.endPoint, data),
   getPhones: () => ApiCrud(Phone.endPoint).getAll(Phone.endPoint),
   getPhone: (id) => ApiCrud(Phone.endPoint).getById(Phone.endPoint, id),
   updatePhone: (id, data) =>
