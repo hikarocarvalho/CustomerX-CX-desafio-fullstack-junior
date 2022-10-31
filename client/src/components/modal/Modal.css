@@ -12,23 +12,4 @@
   height: 100%;
 }
 
-.modal {
-  width: 25em;
-  height: auto;
-  background-color: var(--thirdColor);
-  box-shadow: 0px 0px 3px 1px var(--firstColor);
-  color: var(--firstColor);
-  padding: 1em;
-  display: flex;
-  flex-direction: column;
-  justify-items: center;
-  text-align: center;
-}
 
-.modal button {
-  margin-top: 1em;
-}
-
-.modal button:last-child {
-  background-color: rgb(220, 20, 20);
-}
