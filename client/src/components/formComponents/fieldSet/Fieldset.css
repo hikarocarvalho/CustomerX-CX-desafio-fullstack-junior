@@ -17,7 +17,7 @@
 }
 
 .fieldset_title {
-  color: var(--fourthColor);
+  color: var(--firstColor);
   text-shadow: 1px 1px black;
   font-size: 1.2em;
   font-weight: bold;

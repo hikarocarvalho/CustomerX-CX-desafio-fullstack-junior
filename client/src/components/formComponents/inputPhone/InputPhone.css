@@ -1,0 +1,28 @@
+.container button, .container-ext button{
+width: 2em;
+min-height: 2em;
+height: 2em;
+align-self: center;
+margin-bottom: 1em;
+}
+
+.container,.container-ext{
+    border: none;
+    margin: 0;
+    padding: 0;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.container-ext{
+    max-height: 300px;
+    overflow: scroll;
+}
+
+.container-ext:last-child{
+    margin-left: 1em;
+}
+
+.container article{
+    margin-top: 1em;
+}
