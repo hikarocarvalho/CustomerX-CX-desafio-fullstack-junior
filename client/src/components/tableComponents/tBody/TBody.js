@@ -2,7 +2,6 @@ import "./TBody.css";
 import setDateFormat from "../../../scripts/validations/setDateFormat";
 
 export default function TBody(props) {
-  console.log(props.list)
   return (
     <tbody className="tbody">
       {props.list.map((item, index) => (
@@ -17,8 +16,8 @@ export default function TBody(props) {
             )
           )}
           <td>
-            <i className="bi bi-pencil-square"></i>|
-            <i className="bi bi-trash-fill"></i>
+            <i className="bi bi-pencil-square" onClick={props.editEvent}></i>|
+            <i className="bi bi-trash-fill" onClick={props.deleteEvent}></i>
           </td>
         </tr>
       ))}

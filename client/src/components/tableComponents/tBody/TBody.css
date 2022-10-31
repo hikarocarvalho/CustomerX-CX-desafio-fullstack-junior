@@ -28,3 +28,7 @@ td{
 td:first-child{
     border: none;
 }
+
+tr{
+    cursor: pointer;
+}
