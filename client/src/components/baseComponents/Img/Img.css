@@ -1,0 +1,10 @@
+.img{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 200px;
+    height: 200px;
+    background-color: #ffffff;
+    margin: 1em;
+    border-radius: 50%;
+}
